@@ -1,4 +1,6 @@
 import React from 'react';
+//STEP 8: Importing connect to access state props
+import {connect} from 'react-redux';
 
 const Header = props => {
   return (
@@ -12,4 +14,12 @@ const Header = props => {
   );
 };
 
-export default Header;
+//STEP 10: creating the mapStateToProps returning the state
+const mapStateToProps = (state) => {
+  return {
+    car: state.car,
+  }
+}
+
+//STEP 9: using connect to import mapStateToProps
+export default connect(mapStateToProps)(Header);
